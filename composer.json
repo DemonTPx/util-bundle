@@ -1,0 +1,23 @@
+{
+    "name": "demontpx/util-bundle",
+    "description": "Various Symfony2 utils",
+    "type": "symfony-bundle",
+    "keywords": ["utility"],
+    "license": "MIT",
+    "autoload": {
+        "psr-0": { "DemonTPx\\UtilBundle": "src/" }
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/framework-bundle": "~2.4",
+        "symfony/form": "~2.4",
+        "doctrine/orm": "~2.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~3.7"
+    },
+    "target-dir": "DemonTPx/UtilBundle",
+    "config": {
+        "bin-dir": "bin"
+    }
+}
