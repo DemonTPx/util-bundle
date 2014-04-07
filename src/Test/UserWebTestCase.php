@@ -1,18 +1,18 @@
 <?php
 
-namespace DemonTPx\UtilBundle\Tests;
+namespace DemonTPx\UtilBundle\Test;
 
 use Symfony\Bundle\FrameworkBundle\Client;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
- * UserClientTrait
+ * UserWebTestCase
  *
- * @package   DemonTPx\UtilBundle\Tests
+ * @package   DemonTPx\UtilBundle\Test
  * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2014 Bert Hekman
  */
-class UserWebTestCase extends WebTestCase
+abstract class UserWebTestCase extends WebTestCase
 {
     /**
      * Create a client for a user

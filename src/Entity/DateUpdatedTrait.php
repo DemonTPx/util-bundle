@@ -25,7 +25,7 @@ trait DateUpdatedTrait
      */
     public function setDateUpdatedNow()
     {
-        $this->$dateUpdated = new \DateTime();
+        $this->dateUpdated = new \DateTime();
     }
 
     /**
@@ -33,7 +33,7 @@ trait DateUpdatedTrait
      */
     public function getDateUpdated()
     {
-        return $this->$dateUpdated;
+        return $this->dateUpdated;
     }
 
     /**
@@ -41,6 +41,6 @@ trait DateUpdatedTrait
      */
     public function setDateUpdated($dateUpdated)
     {
-        $this->$dateUpdated = $dateUpdated;
+        $this->dateUpdated = $dateUpdated;
     }
 }
