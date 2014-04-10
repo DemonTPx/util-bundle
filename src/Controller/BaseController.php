@@ -1,6 +1,6 @@
 <?php
 
-namespace DemonTPx\UtilBundle\Controller;
+namespace Demontpx\UtilBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Form;
@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 /**
  * Class BaseController
  *
- * @package   DemonTPx\UtilBundle\Controller
+ * @package   Demontpx\UtilBundle\Controller
  * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2014 Bert Hekman
  */

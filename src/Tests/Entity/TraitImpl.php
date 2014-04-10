@@ -1,15 +1,15 @@
 <?php
 
-namespace DemonTPx\UtilBundle\Tests\Entity;
+namespace Demontpx\UtilBundle\Tests\Entity;
 
-use DemonTPx\UtilBundle\Entity\DateCreatedTrait;
-use DemonTPx\UtilBundle\Entity\DateUpdatedTrait;
-use DemonTPx\UtilBundle\Entity\IdTrait;
+use Demontpx\UtilBundle\Entity\DateCreatedTrait;
+use Demontpx\UtilBundle\Entity\DateUpdatedTrait;
+use Demontpx\UtilBundle\Entity\IdTrait;
 
 /**
  * Class TraitImpl
  *
- * @package   DemonTPx\UtilBundle\Tests\Entity
+ * @package   Demontpx\UtilBundle\Tests\Entity
  * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2014 Bert Hekman
  */

@@ -1,13 +1,13 @@
 <?php
 
-namespace DemonTPx\UtilBundle\Entity;
+namespace Demontpx\UtilBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * DateCreatedTrait
  *
- * @package   DemonTPx\AdministrationBundle\Entity
+ * @package   Demontpx\AdministrationBundle\Entity
  * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2014 Bert Hekman
  */

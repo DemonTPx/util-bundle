@@ -1,11 +1,11 @@
 <?php
 
-namespace DemonTPx\UtilBundle\Tests\Entity;
+namespace Demontpx\UtilBundle\Tests\Entity;
 
 /**
  * Class DateCreatedTraitTest
  *
- * @package   DemonTPx\UtilBundle\Tests\Entity
+ * @package   Demontpx\UtilBundle\Tests\Entity
  * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2014 Bert Hekman
  */

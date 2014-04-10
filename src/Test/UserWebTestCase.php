@@ -1,6 +1,6 @@
 <?php
 
-namespace DemonTPx\UtilBundle\Test;
+namespace Demontpx\UtilBundle\Test;
 
 use Symfony\Bundle\FrameworkBundle\Client;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 /**
  * UserWebTestCase
  *
- * @package   DemonTPx\UtilBundle\Test
+ * @package   Demontpx\UtilBundle\Test
  * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2014 Bert Hekman
  */
