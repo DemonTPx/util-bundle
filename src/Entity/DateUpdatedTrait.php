@@ -16,12 +16,12 @@ trait DateUpdatedTrait
     /**
      * @var \DateTime
      *
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $dateUpdated;
 
     /**
-     * @ORM\OnUpdate
+     * @ORM\PreUpdate
      */
     public function setDateUpdatedNow()
     {
