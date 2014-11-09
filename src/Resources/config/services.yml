@@ -1,0 +1,10 @@
+services:
+    demontpx_util.twig.date_short_extension:
+        class: Demontpx\UtilBundle\Twig\DateShortExtension
+        tags:
+            - { name: twig.extension }
+
+    demontpx_util.form.type.delete:
+        class: Demontpx\UtilBundle\Form\DeleteType
+        tags:
+            - { name: form.type, alias: delete }
