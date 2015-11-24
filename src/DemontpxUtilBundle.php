@@ -2,6 +2,8 @@
 
 namespace Demontpx\UtilBundle;
 
+use Demontpx\UtilBundle\DependencyInjection\Compiler\RegisterSluggableConfigurationCompilerPass;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
@@ -13,4 +15,8 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  */
 class DemontpxUtilBundle extends Bundle
 {
+    public function build(ContainerBuilder $container)
+    {
+        $container->addCompilerPass(new RegisterSluggableConfigurationCompilerPass());
+    }
 }

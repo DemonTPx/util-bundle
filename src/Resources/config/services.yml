@@ -1,4 +1,27 @@
 services:
+    demontpx_util.slug.slugger_slugify:
+        class: Demontpx\UtilBundle\Slug\SlugifySlugger
+
+    demontpx_util.slug.slugger: @demontpx_util.slug.slugger_slugify
+
+    demontpx_util.slug.sluggable_manager:
+        class: Demontpx\UtilBundle\Slug\SluggableManager
+
+    demontpx_util.slug.slugged_url_generator:
+        class: Demontpx\UtilBundle\Slug\SluggedUrlGenerator
+        arguments:
+            - @demontpx_util.slug.sluggable_manager
+            - @router
+            - @demontpx_util.slug.slugger
+
+    demontpx_util.twig.slug:
+        class: Demontpx\UtilBundle\Twig\SlugExtension
+        arguments:
+            - @demontpx_util.slug.slugger
+            - @demontpx_util.slug.slugged_url_generator
+        tags:
+            - { name: twig.extension }
+
     demontpx_util.twig.date_short_extension:
         class: Demontpx\UtilBundle\Twig\DateShortExtension
         tags:
