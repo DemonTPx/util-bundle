@@ -2,6 +2,8 @@
 
 namespace Demontpx\UtilBundle\Twig;
 
+use Demontpx\UtilBundle\Intl\SimpleDateFormatter;
+
 /**
  * Class DateShortExtension
  *
@@ -10,9 +12,17 @@ namespace Demontpx\UtilBundle\Twig;
  */
 class DateShortExtension extends \Twig_Extension
 {
+    /** @var SimpleDateFormatter */
+    private $formatter;
+
     /**
-     * {@inheritdoc}
+     * @param SimpleDateFormatter $formatter
      */
+    public function __construct(SimpleDateFormatter $formatter)
+    {
+        $this->formatter = $formatter;
+    }
+
     public function getFilters()
     {
         return array(
@@ -31,14 +41,20 @@ class DateShortExtension extends \Twig_Extension
         $now = new \DateTime();
 
         if ($now->format('Y-m-d') == $date->format('Y-m-d')) {
-            return $date->format('H:i');
+            return $this->formatter->time($date, SimpleDateFormatter::SHORT);
         }
 
         if ($now->format('Y') == $date->format('Y')) {
-            return strtolower($date->format('j M.'));
+            $result = $this->formatter->date($date, SimpleDateFormatter::MEDIUM);
+
+            if (($pos = strrpos($result, $now->format('Y'))) !== 0) {
+                $result = trim(substr($result, 0, $pos), ', ');
+            }
+
+            return $result;
         }
 
-        return $date->format('d-m-y');
+        return $this->formatter->date($date, SimpleDateFormatter::SHORT);
     }
 
     /**
@@ -48,7 +64,10 @@ class DateShortExtension extends \Twig_Extension
      */
     public function dateShortHover(\DateTime $date)
     {
-        return sprintf('<span title="%s">%s</span>', $date->format('D j F Y, G:i'), $this->dateShort($date));
+        $fullDate = $this->formatter->date($date, SimpleDateFormatter::FULL) . ', ' .
+            $this->formatter->time($date, SimpleDateFormatter::SHORT);
+
+        return sprintf('<span title="%s">%s</span>', $fullDate, $this->dateShort($date));
     }
 
     /**

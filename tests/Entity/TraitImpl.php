@@ -1,10 +1,6 @@
 <?php
 
-namespace Demontpx\UtilBundle\Tests\Entity;
-
-use Demontpx\UtilBundle\Entity\DateCreatedTrait;
-use Demontpx\UtilBundle\Entity\DateUpdatedTrait;
-use Demontpx\UtilBundle\Entity\IdTrait;
+namespace Demontpx\UtilBundle\Entity;
 
 /**
  * Class TraitImpl

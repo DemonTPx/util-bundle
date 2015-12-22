@@ -1,8 +1,11 @@
+parameters:
+    demontpx_util.intl.locale: "%kernel.default_locale%"
+
 services:
     demontpx_util.slug.slugger_slugify:
         class: Demontpx\UtilBundle\Slug\SlugifySlugger
 
-    demontpx_util.slug.slugger: @demontpx_util.slug.slugger_slugify
+    demontpx_util.slug.slugger: "@demontpx_util.slug.slugger_slugify"
 
     demontpx_util.slug.sluggable_manager:
         class: Demontpx\UtilBundle\Slug\SluggableManager
@@ -10,20 +13,34 @@ services:
     demontpx_util.slug.slugged_url_generator:
         class: Demontpx\UtilBundle\Slug\SluggedUrlGenerator
         arguments:
-            - @demontpx_util.slug.sluggable_manager
-            - @router
-            - @demontpx_util.slug.slugger
+            - "@demontpx_util.slug.sluggable_manager"
+            - "@router"
+            - "@demontpx_util.slug.slugger"
+
+    demontpx_util.intl.simple_date_formatter:
+        class: Demontpx\UtilBundle\Intl\SimpleDateFormatter
+        arguments:
+            - "%demontpx_util.intl.locale%"
 
     demontpx_util.twig.slug:
         class: Demontpx\UtilBundle\Twig\SlugExtension
         arguments:
-            - @demontpx_util.slug.slugger
-            - @demontpx_util.slug.slugged_url_generator
+            - "@demontpx_util.slug.slugger"
+            - "@demontpx_util.slug.slugged_url_generator"
         tags:
             - { name: twig.extension }
 
-    demontpx_util.twig.date_short_extension:
+    demontpx_util.twig.extension.simple_date_formatter:
+        class: Demontpx\UtilBundle\Twig\SimpleDateFormatterExtension
+        arguments:
+            - "@demontpx_util.intl.simple_date_formatter"
+        tags:
+            - { name: twig.extension }
+
+    demontpx_util.twig.extension.date_short:
         class: Demontpx\UtilBundle\Twig\DateShortExtension
+        arguments:
+            - "@demontpx_util.intl.simple_date_formatter"
         tags:
             - { name: twig.extension }
 

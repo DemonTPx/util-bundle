@@ -1,8 +1,8 @@
 <?php
 
-namespace Demontpx\UtilBundle\Tests\Twig;
+namespace Demontpx\UtilBundle\Twig;
 
-use Demontpx\UtilBundle\Twig\DateShortExtension;
+use Demontpx\UtilBundle\Intl\SimpleDateFormatter;
 
 /**
  * Class DateShortExtensionTest
@@ -12,12 +12,16 @@ use Demontpx\UtilBundle\Twig\DateShortExtension;
  */
 class DateShortExtensionTest extends \PHPUnit_Framework_TestCase 
 {
+    /** @var SimpleDateFormatter */
+    private $formatter;
+
     /** @var DateShortExtension */
     private $extension;
 
     protected function setUp()
     {
-        $this->extension = new DateShortExtension();
+        $this->formatter = new SimpleDateFormatter('en');
+        $this->extension = new DateShortExtension($this->formatter);
     }
 
     /**
@@ -33,16 +37,16 @@ class DateShortExtensionTest extends \PHPUnit_Framework_TestCase
 
     public function getDateShortData()
     {
-        $dayMonthData = array('1 jan.', new \DateTime('january 1'));
+        $dayMonthData = array('Jan 1', new \DateTime('january 1'));
         if (date('m-d') == '01-01') {
-            $dayMonthData = array('2 jan.', new \DateTime('january 2'));
+            $dayMonthData = array('Jan 2', new \DateTime('january 2'));
         }
 
         return array(
-            array('21:59', new \DateTime('21:59')),
-            array('00:01', new \DateTime('0:01')),
+            array('9:59 PM', new \DateTime('21:59')),
+            array('12:01 AM', new \DateTime('0:01')),
             $dayMonthData,
-            array('23-09-13', new \DateTime('2013-09-23')),
+            array('9/23/13', new \DateTime('2013-09-23')),
         );
     }
 
@@ -60,7 +64,7 @@ class DateShortExtensionTest extends \PHPUnit_Framework_TestCase
     public function getDateShortHoverData()
     {
         return array(
-            array('Sun 9 November 2014, 19:58', new \DateTime('2014-11-09 19:58:20')),
+            array('Sunday, November 9, 2014, 7:58 PM', new \DateTime('2014-11-09 19:58:20')),
         );
     }
 

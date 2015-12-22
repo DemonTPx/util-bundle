@@ -3,7 +3,7 @@
 namespace Demontpx\UtilBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * Class DeleteType
@@ -13,19 +13,13 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
  */
 class DeleteType extends AbstractType
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'method' => 'DELETE',
         ));
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getName()
     {
         return 'delete';

@@ -1,6 +1,6 @@
 <?php
 
-namespace Demontpx\UtilBundle\Tests\Entity;
+namespace Demontpx\UtilBundle\Entity;
 
 /**
  * Class DateUpdatedTraitTest
