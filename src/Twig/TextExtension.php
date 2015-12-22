@@ -10,7 +10,7 @@ use Demontpx\UtilBundle\Text\TextTruncater;
  * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2015 Bert Hekman
  */
-class TextExtension
+class TextExtension extends \Twig_Extension
 {
     /** @var TextTruncater */
     private $truncater;
