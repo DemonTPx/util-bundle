@@ -1,5 +1,6 @@
 parameters:
     demontpx_util.intl.locale: "%kernel.default_locale%"
+    demontpx_util.charset: "%kernel.charset%"
 
 services:
     demontpx_util.slug.slugger_slugify:
@@ -22,11 +23,23 @@ services:
         arguments:
             - "%demontpx_util.intl.locale%"
 
-    demontpx_util.twig.slug:
+    demontpx_util.twig.extension.slug:
         class: Demontpx\UtilBundle\Twig\SlugExtension
         arguments:
             - "@demontpx_util.slug.slugger"
             - "@demontpx_util.slug.slugged_url_generator"
+        tags:
+            - { name: twig.extension }
+
+    demontpx_util.text.truncater:
+        class: Demontpx\UtilBundle\Text\TextTruncater
+        arguments:
+            - "%demontpx_util.charset%"
+
+    demontpx_util.twig.extension.text:
+        class: Demontpx\UtilBundle\Twig\TextExtension
+        arguments:
+            - "@demontpx_util.text.truncater"
         tags:
             - { name: twig.extension }
 
