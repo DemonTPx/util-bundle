@@ -60,4 +60,4 @@ services:
     demontpx_util.form.type.delete:
         class: Demontpx\UtilBundle\Form\DeleteType
         tags:
-            - { name: form.type, alias: delete }
+            - { name: form.type }

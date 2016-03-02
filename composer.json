@@ -6,8 +6,8 @@
     "license": "MIT",
     "require": {
         "php": ">=5.5",
-        "symfony/framework-bundle": "^2.4|^3.0",
-        "symfony/form": "^2.4|^3.0",
+        "symfony/framework-bundle": "^2.8|^3.0",
+        "symfony/form": "^2.8|^3.0",
         "doctrine/orm": "^2.4"
     },
     "require-dev": {

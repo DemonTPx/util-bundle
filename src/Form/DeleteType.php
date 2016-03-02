@@ -19,9 +19,4 @@ class DeleteType extends AbstractType
             'method' => 'DELETE',
         ));
     }
-
-    public function getName()
-    {
-        return 'delete';
-    }
 }

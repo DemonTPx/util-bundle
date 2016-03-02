@@ -3,6 +3,7 @@
 namespace Demontpx\UtilBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
@@ -25,7 +26,7 @@ abstract class BaseController extends Controller
     public function addReferrerToForm(Form $form)
     {
         $request = $this->get('request_stack')->getCurrentRequest();
-        $form->add('http-referrer', 'hidden', array(
+        $form->add('http-referrer', HiddenType::class, array(
             'mapped' => false,
             'data' => $request->headers->get('referer'),
         ));
