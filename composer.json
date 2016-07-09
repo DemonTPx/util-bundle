@@ -1,6 +1,6 @@
 {
     "name": "demontpx/util-bundle",
-    "description": "Various Symfony2 utils",
+    "description": "Various Symfony utils",
     "type": "symfony-bundle",
     "keywords": ["utility"],
     "license": "MIT",

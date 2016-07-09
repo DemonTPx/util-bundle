@@ -1,6 +1,6 @@
 # DemonTPx util bundle
 
-These are some utils I use often in my Symfony2 projects
+These are some utils I use often in my Symfony projects
 
 ## Installation
 
