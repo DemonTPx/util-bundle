@@ -24,9 +24,6 @@ class SimpleDateFormatterExtension extends \Twig_Extension
         'none' => SimpleDateFormatter::NONE,
     ];
 
-    /**
-     * @param SimpleDateFormatter $formatter
-     */
     public function __construct(SimpleDateFormatter $formatter)
     {
         $this->formatter = $formatter;
@@ -47,7 +44,7 @@ class SimpleDateFormatterExtension extends \Twig_Extension
      *
      * @return string
      */
-    public function date($dateTime, $type = SimpleDateFormatter::MEDIUM)
+    public function date($dateTime, $type = SimpleDateFormatter::MEDIUM): string
     {
         return $this->formatter->date($dateTime, $this->toType($type));
     }
@@ -58,7 +55,7 @@ class SimpleDateFormatterExtension extends \Twig_Extension
      *
      * @return string
      */
-    public function time($dateTime, $type = SimpleDateFormatter::MEDIUM)
+    public function time($dateTime, $type = SimpleDateFormatter::MEDIUM): string
     {
         return $this->formatter->time($dateTime, $this->toType($type));
     }
@@ -68,7 +65,7 @@ class SimpleDateFormatterExtension extends \Twig_Extension
      *
      * @return int
      */
-    private function toType($type)
+    private function toType($type): int
     {
         if (is_int($type)) {
             return $type;
@@ -83,10 +80,5 @@ class SimpleDateFormatterExtension extends \Twig_Extension
         }
 
         return self::$typeMap[$type];
-    }
-
-    public function getName()
-    {
-        return 'simple_date_formatter';
     }
 }

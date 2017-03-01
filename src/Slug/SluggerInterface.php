@@ -16,5 +16,5 @@ interface SluggerInterface
      *
      * @return string
      */
-    public function slug($sluggable, $separator = '-');
+    public function slug($sluggable, string $separator = '-'): string;
 }

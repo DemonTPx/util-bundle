@@ -7,7 +7,6 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * DateCreatedTrait
  *
- * @package   Demontpx\AdministrationBundle\Entity
  * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2014 Bert Hekman
  */
@@ -28,10 +27,7 @@ trait DateCreatedTrait
         $this->dateCreated = new \DateTime();
     }
 
-    /**
-     * @return \DateTime
-     */
-    public function getDateCreated()
+    public function getDateCreated(): \DateTime
     {
         return $this->dateCreated;
     }
@@ -39,7 +35,7 @@ trait DateCreatedTrait
     /**
      * @param \DateTime $dateCreated
      */
-    public function setDateCreated($dateCreated)
+    public function setDateCreated(\DateTime $dateCreated)
     {
         $this->dateCreated = $dateCreated;
     }

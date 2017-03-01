@@ -13,23 +13,12 @@ class TextTruncater
     /** @var string */
     private $charset;
 
-    /**
-     * @param string $charset
-     */
-    public function __construct($charset)
+    public function __construct(string $charset)
     {
         $this->charset = $charset;
     }
 
-    /**
-     * @param string $value
-     * @param int    $length
-     * @param bool   $preserve
-     * @param string $separator
-     *
-     * @return string
-     */
-    public function truncate($value, $length = 30, $preserve = false, $separator = '...')
+    public function truncate(string $value, int $length = 30, bool $preserve = false, string $separator = '...'): string
     {
         if (mb_strlen($value, $this->charset) > $length) {
             if ($preserve) {
@@ -41,7 +30,7 @@ class TextTruncater
                 $length = $breakpoint;
             }
 
-            return rtrim(mb_substr($value, 0, $length, $this->charset)).$separator;
+            return rtrim(mb_substr($value, 0, $length, $this->charset)) . $separator;
         }
 
         return $value;

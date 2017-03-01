@@ -15,9 +15,6 @@ class TextExtension extends \Twig_Extension
     /** @var TextTruncater */
     private $truncater;
 
-    /**
-     * @param TextTruncater $truncater
-     */
     public function __construct(TextTruncater $truncater)
     {
         $this->truncater = $truncater;
@@ -35,10 +32,5 @@ class TextExtension extends \Twig_Extension
         return [
             new \Twig_SimpleFunction('truncate', [$this->truncater, 'truncate']),
         ];
-    }
-
-    public function getName()
-    {
-        return 'demontpx_util_text';
     }
 }

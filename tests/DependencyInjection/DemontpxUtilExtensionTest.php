@@ -5,6 +5,7 @@ namespace Demontpx\UtilBundle\DependencyInjection;
 use Demontpx\UtilBundle\Form\DeleteType;
 use Demontpx\UtilBundle\Twig\DateShortExtension;
 use Demontpx\UtilBundle\Twig\SimpleDateFormatterExtension;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
@@ -13,7 +14,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
  * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2014 Bert Hekman
  */
-class DemontpxUtilExtensionTest extends \PHPUnit_Framework_TestCase 
+class DemontpxUtilExtensionTest extends TestCase
 {
     public function testCorrectServiceNameRoots()
     {
@@ -60,11 +61,11 @@ class DemontpxUtilExtensionTest extends \PHPUnit_Framework_TestCase
 
     public function getServiceDefinedData()
     {
-        return array(
-            array('demontpx_util.form.type.delete', DeleteType::class, array('form.type')),
-            array('demontpx_util.twig.extension.date_short', DateShortExtension::class, array('twig.extension')),
-            array('demontpx_util.twig.extension.simple_date_formatter', SimpleDateFormatterExtension::class, array('twig.extension')),
-        );
+        return [
+            ['demontpx_util.form.type.delete', DeleteType::class, ['form.type']],
+            ['demontpx_util.twig.extension.date_short', DateShortExtension::class, ['twig.extension']],
+            ['demontpx_util.twig.extension.simple_date_formatter', SimpleDateFormatterExtension::class, ['twig.extension']],
+        ];
     }
 }
 

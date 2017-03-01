@@ -10,7 +10,7 @@ namespace Demontpx\UtilBundle\Slug;
  */
 abstract class AbstractSlugger implements SluggerInterface
 {
-    public function slug($sluggable, $separator = '-')
+    public function slug($sluggable, string $separator = '-'): string
     {
         return $this->doSlug($this->toText($sluggable), $separator);
     }
@@ -20,7 +20,7 @@ abstract class AbstractSlugger implements SluggerInterface
      *
      * @return string
      */
-    protected function toText($sluggable)
+    protected function toText($sluggable): string
     {
         if ( ! $sluggable instanceof SluggableInterface) {
             return (string) $sluggable;
@@ -35,11 +35,5 @@ abstract class AbstractSlugger implements SluggerInterface
         return $text;
     }
 
-    /**
-     * @param string $text
-     * @param string $separator
-     *
-     * @return string
-     */
-    abstract protected function doSlug($text, $separator);
+    abstract protected function doSlug(string $text, string $separator): string;
 }

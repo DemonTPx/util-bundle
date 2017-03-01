@@ -3,6 +3,7 @@
 namespace Demontpx\UtilBundle\Twig;
 
 use Demontpx\UtilBundle\Intl\SimpleDateFormatter;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Class SimpleDateFormatterExtensionTest
@@ -10,7 +11,7 @@ use Demontpx\UtilBundle\Intl\SimpleDateFormatter;
  * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2015 Bert Hekman
  */
-class SimpleDateFormatterExtensionTest extends \PHPUnit_Framework_TestCase 
+class SimpleDateFormatterExtensionTest extends TestCase
 {
     /** @var SimpleDateFormatterExtension */
     private $extension;
@@ -78,7 +79,7 @@ class SimpleDateFormatterExtensionTest extends \PHPUnit_Framework_TestCase
 
     public function testIncorrectType()
     {
-        $this->setExpectedException(\InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $this->extension->date('now', 'invalid');
     }
@@ -88,6 +89,6 @@ class SimpleDateFormatterExtensionTest extends \PHPUnit_Framework_TestCase
      */
     public function createMockFormatter()
     {
-        return $this->getMock(SimpleDateFormatter::class);
+        return $this->createMock(SimpleDateFormatter::class);
     }
 }

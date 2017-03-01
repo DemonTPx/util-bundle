@@ -19,10 +19,7 @@ class SimpleDateFormatter
     /** @var string */
     private $locale;
 
-    /**
-     * @param string $locale
-     */
-    public function __construct($locale = null)
+    public function __construct(?string $locale = null)
     {
         $this->locale = $locale ?: locale_get_default();
     }
@@ -33,7 +30,7 @@ class SimpleDateFormatter
      *
      * @return string
      */
-    public function format($dateTime, $pattern)
+    public function format($dateTime, string $pattern): string
     {
         $dateTime = $this->toDateTime($dateTime);
         $formatter = $this->createFormatter($dateTime, self::NONE, self::NONE, $pattern);
@@ -47,7 +44,7 @@ class SimpleDateFormatter
      *
      * @return string
      */
-    public function date($dateTime, $type = self::MEDIUM)
+    public function date($dateTime, int $type = self::MEDIUM): string
     {
         $dateTime = $this->toDateTime($dateTime);
         $formatter = $this->createFormatter($dateTime, $type);
@@ -61,7 +58,7 @@ class SimpleDateFormatter
      *
      * @return string
      */
-    public function time($dateTime, $type = self::MEDIUM)
+    public function time($dateTime, int $type = self::MEDIUM): string
     {
         $dateTime = $this->toDateTime($dateTime);
         $formatter = $this->createFormatter($dateTime, self::NONE, $type);
@@ -77,13 +74,25 @@ class SimpleDateFormatter
      *
      * @return \IntlDateFormatter
      */
-    private function createFormatter($dateTime, $dateType = self::NONE, $timeType = self::NONE, $pattern = null)
+    private function createFormatter(
+        \DateTimeInterface $dateTime,
+        int $dateType = self::NONE,
+        int $timeType = self::NONE,
+        string $pattern = null
+    ): \IntlDateFormatter
     {
-        return new \IntlDateFormatter($this->locale, $dateType, $timeType, $dateTime->getTimezone(), \IntlDateFormatter::GREGORIAN, $pattern);
+        return new \IntlDateFormatter(
+            $this->locale,
+            $dateType,
+            $timeType,
+            $dateTime->getTimezone(),
+            \IntlDateFormatter::GREGORIAN,
+            $pattern
+        );
     }
 
     /**
-     * @param mixed $dateTime
+     * @param \DateTimeInterface|int|string $dateTime
      *
      * @return \DateTimeInterface
      */

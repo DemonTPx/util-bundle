@@ -4,20 +4,10 @@ These are some utils I use often in my Symfony projects
 
 ## Installation
 
-Add the util bundle to your `composer.json`:
-
-``` js
-{
-    "require": {
-        "demontpx/util-bundle": "dev-master"
-    }
-}
-```
-
-Then tell composer to download the bundle:
+Install the bundle in your project by running:
 
 ``` bash
-$ composer update demontpx/util-bundle
+$ composer require demontpx/util-bundle
 ```
 
 Enable the bundle in your kernel:
@@ -28,9 +18,9 @@ Enable the bundle in your kernel:
 
 public function registerBundles()
 {
-    $bundles = array(
+    $bundles = [
         // ...
         new Demontpx\UtilBundle\DemontpxUtilBundle(),
-    );
+    ];
 }
 ```

@@ -7,7 +7,6 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * DateUpdatedTrait
  *
- * @package   Demontpx\AdministrationBundle\Entity
  * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2014 Bert Hekman
  */
@@ -28,18 +27,12 @@ trait DateUpdatedTrait
         $this->dateUpdated = new \DateTime();
     }
 
-    /**
-     * @return \DateTime
-     */
-    public function getDateUpdated()
+    public function getDateUpdated(): \DateTime
     {
         return $this->dateUpdated;
     }
 
-    /**
-     * @param \DateTime $dateUpdated
-     */
-    public function setDateUpdated($dateUpdated)
+    public function setDateUpdated(\DateTime $dateUpdated)
     {
         $this->dateUpdated = $dateUpdated;
     }

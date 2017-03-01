@@ -19,10 +19,6 @@ class SlugExtension extends \Twig_Extension
     /** @var SluggedUrlGenerator */
     private $urlGenerator;
 
-    /**
-     * @param SluggerInterface    $slugger
-     * @param SluggedUrlGenerator $urlGenerator
-     */
     public function __construct(SluggerInterface $slugger, SluggedUrlGenerator $urlGenerator)
     {
         $this->slugger = $slugger;
@@ -42,10 +38,5 @@ class SlugExtension extends \Twig_Extension
             new \Twig_SimpleFunction('slug', [$this->slugger, 'slug']),
             new \Twig_SimpleFunction('path_sluggable', [$this->urlGenerator, 'generate']),
         ];
-    }
-
-    public function getName()
-    {
-        return 'demontpx_util_slug';
     }
 }

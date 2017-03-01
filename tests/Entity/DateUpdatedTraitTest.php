@@ -2,14 +2,15 @@
 
 namespace Demontpx\UtilBundle\Entity;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Class DateUpdatedTraitTest
  *
- * @package   Demontpx\UtilBundle\Tests\Entity
  * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2014 Bert Hekman
  */
-class DateUpdatedTraitTest extends \PHPUnit_Framework_TestCase
+class DateUpdatedTraitTest extends TestCase
 {
     public function testGetterSetter()
     {

@@ -21,11 +21,6 @@ class SluggedUrlGenerator
     /** @var SluggerInterface */
     private $slugger;
 
-    /**
-     * @param SluggableManager      $sluggableManager
-     * @param UrlGeneratorInterface $urlGenerator
-     * @param SluggerInterface      $slugger
-     */
     public function __construct(
         SluggableManager $sluggableManager,
         UrlGeneratorInterface $urlGenerator,
@@ -37,13 +32,7 @@ class SluggedUrlGenerator
         $this->slugger = $slugger;
     }
 
-    /**
-     * @param SluggableInterface $sluggable
-     * @param array              $parameterList
-     *
-     * @return string
-     */
-    public function generate(SluggableInterface $sluggable, array $parameterList = [])
+    public function generate(SluggableInterface $sluggable, array $parameterList = []): string
     {
         $configuration = $this->sluggableManager->getConfiguration($sluggable);
 

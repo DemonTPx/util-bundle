@@ -2,6 +2,7 @@
 
 namespace Demontpx\UtilBundle\Form;
 
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
@@ -10,7 +11,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2014 Bert Hekman
  */
-class DeleteTypeTest extends \PHPUnit_Framework_TestCase 
+class DeleteTypeTest extends TestCase
 {
     public function testConfigureOptions()
     {
@@ -18,16 +19,10 @@ class DeleteTypeTest extends \PHPUnit_Framework_TestCase
 
         $resolver->expects($this->once())
             ->method('setDefaults')
-            ->with(array('method' => 'DELETE'));
+            ->with(['method' => 'DELETE']);
 
         $type = new DeleteType();
         $type->configureOptions($resolver);
-    }
-
-    public function testGetName()
-    {
-        $type = new DeleteType();
-        $this->assertEquals('delete', $type->getName());
     }
 
     /**
@@ -35,7 +30,7 @@ class DeleteTypeTest extends \PHPUnit_Framework_TestCase
      */
     private function createMockOptionsResolver()
     {
-        return $this->getMock(OptionsResolver::class);
+        return $this->createMock(OptionsResolver::class);
     }
 }
 

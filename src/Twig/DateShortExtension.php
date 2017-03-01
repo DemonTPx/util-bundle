@@ -25,18 +25,13 @@ class DateShortExtension extends \Twig_Extension
 
     public function getFilters()
     {
-        return array(
-            new \Twig_SimpleFilter('date_short', array($this, 'dateShort'), array('is_safe' => array('html'))),
-            new \Twig_SimpleFilter('date_short_hover', array($this, 'dateShortHover'), array('is_safe' => array('html'))),
-        );
+        return [
+            new \Twig_SimpleFilter('date_short', [$this, 'dateShort'], ['is_safe' => ['html']]),
+            new \Twig_SimpleFilter('date_short_hover', [$this, 'dateShortHover'], ['is_safe' => ['html']]),
+        ];
     }
 
-    /**
-     * @param \DateTime $date
-     *
-     * @return string
-     */
-    public function dateShort(\DateTime $date)
+    public function dateShort(\DateTime $date): string
     {
         $now = new \DateTime();
 
@@ -57,24 +52,11 @@ class DateShortExtension extends \Twig_Extension
         return $this->formatter->date($date, SimpleDateFormatter::SHORT);
     }
 
-    /**
-     * @param \DateTime $date
-     *
-     * @return string
-     */
-    public function dateShortHover(\DateTime $date)
+    public function dateShortHover(\DateTime $date): string
     {
         $fullDate = $this->formatter->date($date, SimpleDateFormatter::FULL) . ', ' .
             $this->formatter->time($date, SimpleDateFormatter::SHORT);
 
         return sprintf('<span title="%s">%s</span>', $fullDate, $this->dateShort($date));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getName()
-    {
-        return 'date_short';
     }
 }

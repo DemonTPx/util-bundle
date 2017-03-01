@@ -22,17 +22,11 @@ class SluggableConfiguration
     /** @var string */
     private $routeSlugParameterName;
 
-    /**
-     * @param string $className
-     * @param string $routeName
-     * @param string $routeIdParameterName
-     * @param string $routeSlugParameterName
-     */
     public function __construct(
-        $className,
-        $routeName,
-        $routeIdParameterName = 'id',
-        $routeSlugParameterName = 'slug'
+        string $className,
+        string $routeName,
+        string $routeIdParameterName = 'id',
+        string $routeSlugParameterName = 'slug'
     )
     {
         $this->className = $className;
@@ -41,34 +35,22 @@ class SluggableConfiguration
         $this->routeSlugParameterName = $routeSlugParameterName;
     }
 
-    /**
-     * @return string
-     */
-    public function getClassName()
+    public function getClassName(): string
     {
         return $this->className;
     }
 
-    /**
-     * @return string
-     */
-    public function getRouteName()
+    public function getRouteName(): string
     {
         return $this->routeName;
     }
 
-    /**
-     * @return string
-     */
-    public function getRouteIdParameterName()
+    public function getRouteIdParameterName(): string
     {
         return $this->routeIdParameterName;
     }
 
-    /**
-     * @return string
-     */
-    public function getRouteSlugParameterName()
+    public function getRouteSlugParameterName(): string
     {
         return $this->routeSlugParameterName;
     }

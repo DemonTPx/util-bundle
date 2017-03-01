@@ -7,21 +7,25 @@
         <PHPCodeStyleSettings>
           <option name="ALIGN_PHPDOC_PARAM_NAMES" value="true" />
           <option name="ALIGN_PHPDOC_COMMENTS" value="true" />
+          <option name="COMMA_AFTER_LAST_ARRAY_ELEMENT" value="true" />
           <option name="PHPDOC_BLANK_LINE_BEFORE_TAGS" value="true" />
           <option name="PHPDOC_BLANK_LINES_AROUND_PARAMETERS" value="true" />
           <option name="LOWER_CASE_BOOLEAN_CONST" value="true" />
           <option name="LOWER_CASE_NULL_CONST" value="true" />
           <option name="BLANK_LINE_BEFORE_RETURN_STATEMENT" value="true" />
+          <option name="SPACE_BEFORE_UNARY_NOT" value="true" />
+          <option name="SPACE_AFTER_UNARY_NOT" value="true" />
+          <option name="FORCE_SHORT_DECLARATION_ARRAY_STYLE" value="true" />
         </PHPCodeStyleSettings>
         <XML>
           <option name="XML_LEGACY_SETTINGS_IMPORTED" value="true" />
         </XML>
         <codeStyleSettings language="PHP">
           <option name="BLANK_LINES_AFTER_PACKAGE" value="1" />
+          <option name="SPACE_AFTER_TYPE_CAST" value="true" />
         </codeStyleSettings>
       </value>
     </option>
     <option name="USE_PER_PROJECT_SETTINGS" value="true" />
   </component>
 </project>
-

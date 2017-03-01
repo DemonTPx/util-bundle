@@ -23,7 +23,7 @@ class SluggableManager
      *
      * @return SluggableConfiguration
      */
-    public function getConfiguration($class)
+    public function getConfiguration($class): SluggableConfiguration
     {
         if (is_object($class)) {
             $class = get_class($class);

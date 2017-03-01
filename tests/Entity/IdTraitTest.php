@@ -2,14 +2,15 @@
 
 namespace Demontpx\UtilBundle\Entity;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Class IdTraitTest
  *
- * @package   Demontpx\UtilBundle\Tests\Entity
  * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2014 Bert Hekman
  */
-class IdTraitTest extends \PHPUnit_Framework_TestCase
+class IdTraitTest extends TestCase
 {
     public function test()
     {

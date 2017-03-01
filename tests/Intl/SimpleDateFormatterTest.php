@@ -2,13 +2,15 @@
 
 namespace Demontpx\UtilBundle\Intl;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Class SimpleDateFormatterTest
  *
  * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2015 Bert Hekman
  */
-class SimpleDateFormatterTest extends \PHPUnit_Framework_TestCase 
+class SimpleDateFormatterTest extends TestCase
 {
     public function setUp()
     {
@@ -35,7 +37,7 @@ class SimpleDateFormatterTest extends \PHPUnit_Framework_TestCase
     public function getTestData()
     {
         return [
-            ['nl', '2015-12-22', 'cccc', 'dinsdag'],
+            ['nl', '2015-12-22', 'cccc', 'Dinsdag'],
             ['en', '2015-12-22', 'cccc', 'Tuesday'],
             ['fr', '2015-12-22', 'MMMM', 'décembre'],
         ];

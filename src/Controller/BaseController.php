@@ -10,7 +10,6 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 /**
  * Class BaseController
  *
- * @package   Demontpx\UtilBundle\Controller
  * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2014 Bert Hekman
  */
@@ -26,10 +25,10 @@ abstract class BaseController extends Controller
     public function addReferrerToForm(Form $form)
     {
         $request = $this->get('request_stack')->getCurrentRequest();
-        $form->add('http-referrer', HiddenType::class, array(
+        $form->add('http-referrer', HiddenType::class, [
             'mapped' => false,
             'data' => $request->headers->get('referer'),
-        ));
+        ]);
     }
 
     /**
@@ -43,11 +42,11 @@ abstract class BaseController extends Controller
      *
      * @return RedirectResponse
      */
-    public function redirectToFormReferrer(Form $form, $defaultRoute)
+    public function redirectToFormReferrer(Form $form, string $defaultRoute): RedirectResponse
     {
         $referrer = $form->get('http-referrer')->getData();
 
-        return $this->redirectToFirstValidRoute(array($referrer, $defaultRoute));
+        return $this->redirectToFirstValidRoute([$referrer, $defaultRoute]);
     }
 
     /**
@@ -58,14 +57,14 @@ abstract class BaseController extends Controller
      *
      * @return RedirectResponse
      */
-    public function redirectToReferrer($defaultRoute = null)
+    public function redirectToReferrer(string $defaultRoute = null): RedirectResponse
     {
         $request = $this->get('request_stack')->getCurrentRequest();
 
-        return $this->redirectToFirstValidRoute(array(
+        return $this->redirectToFirstValidRoute([
             $request->headers->get('referer'),
             $defaultRoute,
-        ));
+        ]);
     }
 
     /**
@@ -76,7 +75,7 @@ abstract class BaseController extends Controller
      * @return RedirectResponse
      * @throws \InvalidArgumentException
      */
-    public function redirectToFirstValidRoute(array $routeList)
+    public function redirectToFirstValidRoute(array $routeList): RedirectResponse
     {
         foreach ($routeList as $route) {
             if ($route) {

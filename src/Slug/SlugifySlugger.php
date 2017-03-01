@@ -15,15 +15,12 @@ class SlugifySlugger extends AbstractSlugger
     /** @var Slugify */
     private $slugify;
 
-    /**
-     * @param Slugify $slugify
-     */
-    public function __construct(Slugify $slugify = null)
+    public function __construct(?Slugify $slugify = null)
     {
         $this->slugify = $slugify ?: new Slugify();
     }
 
-    public function doSlug($text, $separator = '-')
+    public function doSlug(string $text, string $separator = '-'): string
     {
         return $this->slugify->slugify($text, $separator);
     }

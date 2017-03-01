@@ -2,13 +2,15 @@
 
 namespace Demontpx\UtilBundle\Text;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Class TextTruncaterTest
  *
  * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2015 Bert Hekman
  */
-class TextTruncaterTest extends \PHPUnit_Framework_TestCase 
+class TextTruncaterTest extends TestCase
 {
     /** @var TextTruncater */
     private $truncater;
