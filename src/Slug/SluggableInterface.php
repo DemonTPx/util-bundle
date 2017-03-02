@@ -10,7 +10,7 @@ namespace Demontpx\UtilBundle\Slug;
  */
 interface SluggableInterface
 {
-    public function getId(): int;
+    public function getSlugId(): int;
 
     /**
      * Returns the slug parts as string or array of strings

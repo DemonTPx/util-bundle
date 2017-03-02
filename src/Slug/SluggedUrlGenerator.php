@@ -36,7 +36,7 @@ class SluggedUrlGenerator
     {
         $configuration = $this->sluggableManager->getConfiguration($sluggable);
 
-        $parameterList[$configuration->getRouteIdParameterName()] = $sluggable->getId();
+        $parameterList[$configuration->getRouteIdParameterName()] = $sluggable->getSlugId();
         $parameterList[$configuration->getRouteSlugParameterName()] = $this->slugger->slug($sluggable);
 
         return $this->urlGenerator->generate($configuration->getRouteName(), $parameterList);
