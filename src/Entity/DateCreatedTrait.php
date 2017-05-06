@@ -27,7 +27,7 @@ trait DateCreatedTrait
         $this->dateCreated = new \DateTime();
     }
 
-    public function getDateCreated(): \DateTime
+    public function getDateCreated(): ?\DateTime
     {
         return $this->dateCreated;
     }
@@ -35,7 +35,7 @@ trait DateCreatedTrait
     /**
      * @param \DateTime $dateCreated
      */
-    public function setDateCreated(\DateTime $dateCreated)
+    public function setDateCreated(?\DateTime $dateCreated)
     {
         $this->dateCreated = $dateCreated;
     }

@@ -27,12 +27,12 @@ trait DateUpdatedTrait
         $this->dateUpdated = new \DateTime();
     }
 
-    public function getDateUpdated(): \DateTime
+    public function getDateUpdated(): ?\DateTime
     {
         return $this->dateUpdated;
     }
 
-    public function setDateUpdated(\DateTime $dateUpdated)
+    public function setDateUpdated(?\DateTime $dateUpdated)
     {
         $this->dateUpdated = $dateUpdated;
     }
