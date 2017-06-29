@@ -28,15 +28,15 @@ class SlugExtension extends \Twig_Extension
     public function getFilters()
     {
         return [
-            new \Twig_SimpleFilter('slug', [$this->slugger, 'slug']),
+            new \Twig_Filter('slug', [$this->slugger, 'slug']),
         ];
     }
 
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('slug', [$this->slugger, 'slug']),
-            new \Twig_SimpleFunction('path_sluggable', [$this->urlGenerator, 'generate']),
+            new \Twig_Function('slug', [$this->slugger, 'slug']),
+            new \Twig_Function('path_sluggable', [$this->urlGenerator, 'generate']),
         ];
     }
 }

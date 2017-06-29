@@ -26,8 +26,8 @@ class DateShortExtension extends \Twig_Extension
     public function getFilters()
     {
         return [
-            new \Twig_SimpleFilter('date_short', [$this, 'dateShort'], ['is_safe' => ['html']]),
-            new \Twig_SimpleFilter('date_short_hover', [$this, 'dateShortHover'], ['is_safe' => ['html']]),
+            new \Twig_Filter('date_short', [$this, 'dateShort'], ['is_safe' => ['html']]),
+            new \Twig_Filter('date_short_hover', [$this, 'dateShortHover'], ['is_safe' => ['html']]),
         ];
     }
 

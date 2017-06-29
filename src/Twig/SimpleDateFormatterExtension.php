@@ -32,9 +32,9 @@ class SimpleDateFormatterExtension extends \Twig_Extension
     public function getFilters()
     {
         return [
-            new \Twig_SimpleFilter('intl_format', [$this->formatter, 'format']),
-            new \Twig_SimpleFilter('intl_date', [$this, 'date']),
-            new \Twig_SimpleFilter('intl_time', [$this, 'time']),
+            new \Twig_Filter('intl_format', [$this->formatter, 'format']),
+            new \Twig_Filter('intl_date', [$this, 'date']),
+            new \Twig_Filter('intl_time', [$this, 'time']),
         ];
     }
 

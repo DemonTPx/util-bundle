@@ -23,14 +23,14 @@ class TextExtension extends \Twig_Extension
     public function getFilters()
     {
         return [
-            new \Twig_SimpleFilter('truncate', [$this->truncater, 'truncate']),
+            new \Twig_Filter('truncate', [$this->truncater, 'truncate']),
         ];
     }
 
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('truncate', [$this->truncater, 'truncate']),
+            new \Twig_Function('truncate', [$this->truncater, 'truncate']),
         ];
     }
 }
