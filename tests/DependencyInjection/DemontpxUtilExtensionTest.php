@@ -25,10 +25,16 @@ class DemontpxUtilExtensionTest extends TestCase
         $extension->load($configs, $container);
 
         foreach (array_keys($container->getDefinitions()) as $serviceId) {
+            if ($serviceId == 'service_container') {
+                continue;
+            }
             $this->assertStringStartsWith('demontpx_util.', $serviceId);
         }
 
         foreach (array_keys($container->getAliases()) as $serviceId) {
+            if (strpos($serviceId, '\\') !== -1) {
+                continue;
+            }
             $this->assertStringStartsWith('demontpx_util.', $serviceId);
         }
 

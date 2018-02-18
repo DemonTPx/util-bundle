@@ -37,7 +37,7 @@ class SimpleDateFormatterTest extends TestCase
     public function getTestData()
     {
         return [
-            ['nl', '2015-12-22', 'cccc', 'Dinsdag'],
+            ['nl', '2015-12-22', 'cccc', 'dinsdag'],
             ['en', '2015-12-22', 'cccc', 'Tuesday'],
             ['fr', '2015-12-22', 'MMMM', 'décembre'],
         ];

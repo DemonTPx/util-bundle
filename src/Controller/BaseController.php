@@ -17,7 +17,7 @@ abstract class BaseController extends Controller
      *
      * @see redirectToFormReferrer
      */
-    public function addReferrerToForm(FormInterface $form)
+    public function addReferrerToForm(FormInterface $form): void
     {
         $request = $this->get('request_stack')->getCurrentRequest();
         $form->add('http-referrer', HiddenType::class, [
