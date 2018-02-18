@@ -3,9 +3,6 @@
 namespace Demontpx\UtilBundle\Slug;
 
 /**
- * Interface SluggableInterface
- *
- * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2015 Bert Hekman
  */
 interface SluggableInterface

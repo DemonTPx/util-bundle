@@ -3,9 +3,6 @@
 namespace Demontpx\UtilBundle\Slug;
 
 /**
- * Class SluggableManager
- *
- * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2015 Bert Hekman
  */
 class SluggableConfiguration

@@ -3,9 +3,6 @@
 namespace Demontpx\UtilBundle\Intl;
 
 /**
- * Class SimpleDateFormatter
- *
- * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2015 Bert Hekman
  */
 class SimpleDateFormatter
@@ -26,9 +23,6 @@ class SimpleDateFormatter
 
     /**
      * @param \DateTimeInterface|int|string $dateTime
-     * @param string                        $pattern
-     *
-     * @return string
      */
     public function format($dateTime, string $pattern): string
     {
@@ -40,9 +34,6 @@ class SimpleDateFormatter
 
     /**
      * @param \DateTimeInterface|int|string $dateTime
-     * @param int                           $type
-     *
-     * @return string
      */
     public function date($dateTime, int $type = self::MEDIUM): string
     {
@@ -54,9 +45,6 @@ class SimpleDateFormatter
 
     /**
      * @param \DateTimeInterface|int|string $dateTime
-     * @param int                           $type
-     *
-     * @return string
      */
     public function time($dateTime, int $type = self::MEDIUM): string
     {
@@ -66,14 +54,6 @@ class SimpleDateFormatter
         return $formatter->format($dateTime);
     }
 
-    /**
-     * @param \DateTimeInterface $dateTime
-     * @param int                $dateType
-     * @param int                $timeType
-     * @param string             $pattern
-     *
-     * @return \IntlDateFormatter
-     */
     private function createFormatter(
         \DateTimeInterface $dateTime,
         int $dateType = self::NONE,
@@ -93,10 +73,8 @@ class SimpleDateFormatter
 
     /**
      * @param \DateTimeInterface|int|string $dateTime
-     *
-     * @return \DateTimeInterface
      */
-    private function toDateTime($dateTime)
+    private function toDateTime($dateTime): \DateTimeInterface
     {
         if ($dateTime instanceof \DateTimeInterface) {
             return $dateTime;

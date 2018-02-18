@@ -6,9 +6,6 @@ use Demontpx\UtilBundle\Slug\SluggedUrlGenerator;
 use Demontpx\UtilBundle\Slug\SluggerInterface;
 
 /**
- * Class SlugExtension
- *
- * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2015 Bert Hekman
  */
 class SlugExtension extends \Twig_Extension

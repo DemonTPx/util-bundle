@@ -5,9 +5,6 @@ namespace Demontpx\UtilBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * IdTrait
- *
- * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2014 Bert Hekman
  */
 trait IdTrait

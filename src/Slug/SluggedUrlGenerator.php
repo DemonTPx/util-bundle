@@ -5,9 +5,6 @@ namespace Demontpx\UtilBundle\Slug;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 /**
- * Class SluggedUrlGenerator
- *
- * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2015 Bert Hekman
  */
 class SluggedUrlGenerator

@@ -5,9 +5,6 @@ namespace Demontpx\UtilBundle\Twig;
 use Demontpx\UtilBundle\Intl\SimpleDateFormatter;
 
 /**
- * Class DateShortExtension
- *
- * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2014 Bert Hekman
  */
 class DateShortExtension extends \Twig_Extension
@@ -15,9 +12,6 @@ class DateShortExtension extends \Twig_Extension
     /** @var SimpleDateFormatter */
     private $formatter;
 
-    /**
-     * @param SimpleDateFormatter $formatter
-     */
     public function __construct(SimpleDateFormatter $formatter)
     {
         $this->formatter = $formatter;

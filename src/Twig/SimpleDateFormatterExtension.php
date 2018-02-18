@@ -5,9 +5,6 @@ namespace Demontpx\UtilBundle\Twig;
 use Demontpx\UtilBundle\Intl\SimpleDateFormatter;
 
 /**
- * Class SimpleDateFormatterExtension
- *
- * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2015 Bert Hekman
  */
 class SimpleDateFormatterExtension extends \Twig_Extension
@@ -40,9 +37,6 @@ class SimpleDateFormatterExtension extends \Twig_Extension
 
     /**
      * @param \DateTimeInterface|int|string $dateTime
-     * @param int|string                    $type     full, long, medium, short or none
-     *
-     * @return string
      */
     public function date($dateTime, $type = SimpleDateFormatter::MEDIUM): string
     {
@@ -51,9 +45,6 @@ class SimpleDateFormatterExtension extends \Twig_Extension
 
     /**
      * @param \DateTimeInterface|int|string $dateTime
-     * @param int|string                    $type     full, long, medium, short or none
-     *
-     * @return string
      */
     public function time($dateTime, $type = SimpleDateFormatter::MEDIUM): string
     {
@@ -62,8 +53,6 @@ class SimpleDateFormatterExtension extends \Twig_Extension
 
     /**
      * @param int|string $type
-     *
-     * @return int
      */
     private function toType($type): int
     {

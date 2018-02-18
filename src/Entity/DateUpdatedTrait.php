@@ -5,15 +5,12 @@ namespace Demontpx\UtilBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * DateUpdatedTrait
- *
- * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2014 Bert Hekman
  */
 trait DateUpdatedTrait
 {
     /**
-     * @var \DateTime
+     * @var ?\DateTimeInterface
      *
      * @ORM\Column(type="datetime", nullable=true)
      */
@@ -27,12 +24,12 @@ trait DateUpdatedTrait
         $this->dateUpdated = new \DateTime();
     }
 
-    public function getDateUpdated(): ?\DateTime
+    public function getDateUpdated(): ?\DateTimeInterface
     {
         return $this->dateUpdated;
     }
 
-    public function setDateUpdated(?\DateTime $dateUpdated)
+    public function setDateUpdated(?\DateTimeInterface $dateUpdated)
     {
         $this->dateUpdated = $dateUpdated;
     }

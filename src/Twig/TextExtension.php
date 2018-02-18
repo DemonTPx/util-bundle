@@ -5,9 +5,6 @@ namespace Demontpx\UtilBundle\Twig;
 use Demontpx\UtilBundle\Text\TextTruncater;
 
 /**
- * Class TextExtension
- *
- * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2015 Bert Hekman
  */
 class TextExtension extends \Twig_Extension

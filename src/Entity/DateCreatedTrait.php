@@ -5,15 +5,12 @@ namespace Demontpx\UtilBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * DateCreatedTrait
- *
- * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2014 Bert Hekman
  */
 trait DateCreatedTrait
 {
     /**
-     * @var \DateTime
+     * @var \DateTimeInterface
      *
      * @ORM\Column(type="datetime")
      */
@@ -27,15 +24,12 @@ trait DateCreatedTrait
         $this->dateCreated = new \DateTime();
     }
 
-    public function getDateCreated(): ?\DateTime
+    public function getDateCreated(): ?\DateTimeInterface
     {
         return $this->dateCreated;
     }
 
-    /**
-     * @param \DateTime $dateCreated
-     */
-    public function setDateCreated(?\DateTime $dateCreated)
+    public function setDateCreated(\DateTimeInterface $dateCreated)
     {
         $this->dateCreated = $dateCreated;
     }

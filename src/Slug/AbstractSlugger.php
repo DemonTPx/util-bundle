@@ -3,9 +3,6 @@
 namespace Demontpx\UtilBundle\Slug;
 
 /**
- * Class AbstractSlugger
- *
- * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2015 Bert Hekman
  */
 abstract class AbstractSlugger implements SluggerInterface
@@ -17,8 +14,6 @@ abstract class AbstractSlugger implements SluggerInterface
 
     /**
      * @param string|SluggableInterface $sluggable
-     *
-     * @return string
      */
     protected function toText($sluggable): string
     {
