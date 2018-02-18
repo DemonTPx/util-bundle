@@ -6,9 +6,6 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
- * Class DeleteTypeTest
- *
- * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2014 Bert Hekman
  */
 class DeleteTypeTest extends TestCase

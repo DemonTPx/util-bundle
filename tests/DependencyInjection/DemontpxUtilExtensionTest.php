@@ -9,9 +9,6 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
- * Class DemontpxUtilExtensionTest
- *
- * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2014 Bert Hekman
  */
 class DemontpxUtilExtensionTest extends TestCase

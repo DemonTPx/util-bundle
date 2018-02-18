@@ -5,9 +5,6 @@ namespace Demontpx\UtilBundle\Intl;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class SimpleDateFormatterTest
- *
- * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2015 Bert Hekman
  */
 class SimpleDateFormatterTest extends TestCase
@@ -20,14 +17,9 @@ class SimpleDateFormatterTest extends TestCase
     }
 
     /**
-     * @param string $locale
-     * @param mixed  $dateTime
-     * @param string $format
-     * @param string $expected
-     *
      * @dataProvider getTestData
      */
-    public function test($locale, $dateTime, $format, $expected)
+    public function test(string $locale, $dateTime, string $format, string$expected)
     {
         $formatter = new SimpleDateFormatter($locale);
 

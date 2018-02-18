@@ -5,9 +5,6 @@ namespace Demontpx\UtilBundle\Text;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class TextTruncaterTest
- *
- * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2015 Bert Hekman
  */
 class TextTruncaterTest extends TestCase
@@ -21,15 +18,9 @@ class TextTruncaterTest extends TestCase
     }
 
     /**
-     * @param string $expectedResult
-     * @param string $value
-     * @param int    $length
-     * @param bool   $preserve
-     * @param string $separator
-     *
      * @dataProvider getTestData
      */
-    public function test($expectedResult, $value, $length, $preserve, $separator)
+    public function test(string $expectedResult, string $value, int $length, bool $preserve, string $separator)
     {
         $result = $this->truncater->truncate($value, $length, $preserve, $separator);
 

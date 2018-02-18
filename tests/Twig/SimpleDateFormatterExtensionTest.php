@@ -6,9 +6,6 @@ use Demontpx\UtilBundle\Intl\SimpleDateFormatter;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class SimpleDateFormatterExtensionTest
- *
- * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2015 Bert Hekman
  */
 class SimpleDateFormatterExtensionTest extends TestCase
@@ -26,12 +23,9 @@ class SimpleDateFormatterExtensionTest extends TestCase
     }
 
     /**
-     * @param string $type
-     * @param string $typeId
-     *
      * @dataProvider getFormats
      */
-    public function testDate($type, $typeId)
+    public function testDate($type, string $typeId)
     {
         $date = '22-12-2015 00:47:47';
         $formattedDate = 'Dec 22, 2015';
@@ -46,12 +40,9 @@ class SimpleDateFormatterExtensionTest extends TestCase
     }
 
     /**
-     * @param string $type
-     * @param string $typeId
-     *
      * @dataProvider getFormats
      */
-    public function testTime($type, $typeId)
+    public function testTime($type, string $typeId)
     {
         $date = '22-12-2015 00:47:47';
         $formattedTime = 'Dec 22, 2015';

@@ -5,9 +5,6 @@ namespace Demontpx\UtilBundle\Entity;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class DateCreatedTraitTest
- *
- * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2014 Bert Hekman
  */
 class DateCreatedTraitTest extends TestCase

@@ -6,9 +6,6 @@ use Demontpx\UtilBundle\Intl\SimpleDateFormatter;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class DateShortExtensionTest
- *
- * @author    Bert Hekman <demontpx@gmail.com>
  * @copyright 2014 Bert Hekman
  */
 class DateShortExtensionTest extends TestCase
@@ -26,12 +23,9 @@ class DateShortExtensionTest extends TestCase
     }
 
     /**
-     * @param string    $expected
-     * @param \DateTime $date
-     *
      * @dataProvider getDateShortData
      */
-    public function testDateShort($expected, \DateTime $date)
+    public function testDateShort(string $expected, \DateTime $date)
     {
         $this->assertEquals($expected, $this->extension->dateShort($date));
     }
@@ -52,12 +46,9 @@ class DateShortExtensionTest extends TestCase
     }
 
     /**
-     * @param string    $expected
-     * @param \DateTime $date
-     *
      * @dataProvider getDateShortHoverData
      */
-    public function testDateShortHover($expected, \DateTime $date)
+    public function testDateShortHover(string $expected, \DateTime $date)
     {
         $this->assertStringStartsWith('<span title="' . $expected . '">', $this->extension->dateShortHover($date));
     }
