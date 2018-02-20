@@ -15,6 +15,10 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('demontpx_util');
 
+        $rootNode->children()
+            ->booleanNode('testing')->defaultFalse()->end()
+        ->end();
+
         return $treeBuilder;
     }
 }
