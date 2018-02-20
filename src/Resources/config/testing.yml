@@ -3,3 +3,4 @@ services:
         class: Demontpx\UtilBundle\Test\ThrowableCollector
         tags:
             - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
+        public: true
