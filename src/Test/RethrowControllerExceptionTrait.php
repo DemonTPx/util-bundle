@@ -11,11 +11,11 @@ trait RethrowControllerExceptionTrait
     {
         $container = static::$kernel->getContainer();
 
-        if ( ! $container->has('pbweb_demontpx.throwable_collector')) {
+        if ( ! $container->has('demontpx_util.throwable_collector')) {
             throw new \LogicException('Throwable collector service could not be found. Did you set demontpx_util.testing to true in your configuration?');
         }
 
-        $exceptionCollector = $container->get('pbweb_demontpx.throwable_collector');
+        $exceptionCollector = $container->get('demontpx_util.throwable_collector');
 
         $throwable = $exceptionCollector->getThrowable();
 
