@@ -49,7 +49,7 @@ abstract class WebTestCase extends BaseWebTestCase
         return $this->crawler;
     }
 
-    protected function click(Link $link, int $expectedResponseCode = Response::HTTP_OK)
+    protected function click(Link $link, int $expectedResponseCode = Response::HTTP_OK): Crawler
     {
         $this->ensureClient();
 
