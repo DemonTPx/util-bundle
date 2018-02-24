@@ -99,7 +99,7 @@ abstract class WebTestCase extends BaseWebTestCase
     {
         $list = $this->getAnnotations();
 
-        if ( ! isset($list) && ! isset($list[$type]) && ! isset($list[$type]['user'])) {
+        if ( ! isset($list) || ! isset($list[$type]) || ! isset($list[$type]['user'])) {
             return null;
         }
 
