@@ -25,6 +25,11 @@ class DemontpxUtilExtensionTest extends TestCase
             if ($serviceId == 'service_container') {
                 continue;
             }
+            if (strpos($serviceId, '\\') !== -1) {
+                $this->assertStringStartsWith('Demontpx\\UtilBundle\\', $serviceId);
+
+                continue;
+            }
             $this->assertStringStartsWith('demontpx_util.', $serviceId);
         }
 
@@ -41,13 +46,11 @@ class DemontpxUtilExtensionTest extends TestCase
     }
 
     /**
-     * @param string   $name
-     * @param string   $class
      * @param string[] $tagList
      *
      * @dataProvider getServiceDefinedData
      */
-    public function testServiceDefined($name, $class, $tagList)
+    public function testServiceDefined(string $class, array $tagList)
     {
         $configs = [[]];
         $container = new ContainerBuilder();
@@ -55,19 +58,17 @@ class DemontpxUtilExtensionTest extends TestCase
         $extension = new DemontpxUtilExtension();
         $extension->load($configs, $container);
 
-        $this->assertTrue($container->hasDefinition($name));
+        $this->assertTrue($container->hasDefinition($class));
 
-        $deleteFormTypeDefinition = $container->getDefinition($name);
-        $this->assertEquals($class, $deleteFormTypeDefinition->getClass());
+        $deleteFormTypeDefinition = $container->getDefinition($class);
         $this->assertEquals($tagList, array_keys($deleteFormTypeDefinition->getTags()));
     }
 
     public function getServiceDefinedData()
     {
         return [
-            ['demontpx_util.form.type.delete', DeleteType::class, ['form.type']],
-            ['demontpx_util.twig.extension.date_short', DateShortExtension::class, ['twig.extension']],
-            ['demontpx_util.twig.extension.simple_date_formatter', SimpleDateFormatterExtension::class, ['twig.extension']],
+            [DateShortExtension::class, ['twig.extension']],
+            [SimpleDateFormatterExtension::class, ['twig.extension']],
         ];
     }
 }

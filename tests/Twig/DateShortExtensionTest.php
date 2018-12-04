@@ -12,7 +12,6 @@ class DateShortExtensionTest extends TestCase
 {
     /** @var SimpleDateFormatter */
     private $formatter;
-
     /** @var DateShortExtension */
     private $extension;
 

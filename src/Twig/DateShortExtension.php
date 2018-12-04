@@ -3,11 +3,13 @@
 namespace Demontpx\UtilBundle\Twig;
 
 use Demontpx\UtilBundle\Intl\SimpleDateFormatter;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
 
 /**
  * @copyright 2014 Bert Hekman
  */
-class DateShortExtension extends \Twig_Extension
+class DateShortExtension extends AbstractExtension
 {
     /** @var SimpleDateFormatter */
     private $formatter;
@@ -20,8 +22,8 @@ class DateShortExtension extends \Twig_Extension
     public function getFilters()
     {
         return [
-            new \Twig_Filter('date_short', [$this, 'dateShort'], ['is_safe' => ['html']]),
-            new \Twig_Filter('date_short_hover', [$this, 'dateShortHover'], ['is_safe' => ['html']]),
+            new TwigFilter('date_short', [$this, 'dateShort'], ['is_safe' => ['html']]),
+            new TwigFilter('date_short_hover', [$this, 'dateShortHover'], ['is_safe' => ['html']]),
         ];
     }
 

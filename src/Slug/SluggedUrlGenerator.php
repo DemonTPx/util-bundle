@@ -11,10 +11,8 @@ class SluggedUrlGenerator
 {
     /** @var SluggableManager */
     private $sluggableManager;
-
     /** @var UrlGeneratorInterface */
     private $urlGenerator;
-
     /** @var SluggerInterface */
     private $slugger;
 

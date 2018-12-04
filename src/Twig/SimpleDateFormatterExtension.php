@@ -3,11 +3,13 @@
 namespace Demontpx\UtilBundle\Twig;
 
 use Demontpx\UtilBundle\Intl\SimpleDateFormatter;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
 
 /**
  * @copyright 2015 Bert Hekman
  */
-class SimpleDateFormatterExtension extends \Twig_Extension
+class SimpleDateFormatterExtension extends AbstractExtension
 {
     /** @var SimpleDateFormatter */
     private $formatter;
@@ -29,9 +31,9 @@ class SimpleDateFormatterExtension extends \Twig_Extension
     public function getFilters()
     {
         return [
-            new \Twig_Filter('intl_format', [$this->formatter, 'format']),
-            new \Twig_Filter('intl_date', [$this, 'date']),
-            new \Twig_Filter('intl_time', [$this, 'time']),
+            new TwigFilter('intl_format', [$this->formatter, 'format']),
+            new TwigFilter('intl_date', [$this, 'date']),
+            new TwigFilter('intl_time', [$this, 'time']),
         ];
     }
 

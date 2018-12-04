@@ -9,13 +9,10 @@ class SluggableConfiguration
 {
     /** @var string */
     private $className;
-
     /** @var string */
     private $routeName;
-
     /** @var string */
     private $routeIdParameterName;
-
     /** @var string */
     private $routeSlugParameterName;
 

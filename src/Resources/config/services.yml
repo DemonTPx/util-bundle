@@ -1,63 +1,37 @@
 parameters:
-    demontpx_util.intl.locale: "%kernel.default_locale%"
-    demontpx_util.charset: "%kernel.charset%"
+    demontpx_util.intl.locale: '%kernel.default_locale%'
+    demontpx_util.charset: '%kernel.charset%'
 
 services:
-    demontpx_util.slug.slugger_slugify:
-        class: Demontpx\UtilBundle\Slug\SlugifySlugger
+    _defaults:
+        autowire: true
 
-    demontpx_util.slug.slugger: "@demontpx_util.slug.slugger_slugify"
+    Demontpx\UtilBundle\Slug\SlugifySlugger:
+    Demontpx\UtilBundle\Slug\SluggerInterface: '@Demontpx\UtilBundle\Slug\SlugifySlugger'
 
-    demontpx_util.slug.sluggable_manager:
-        class: Demontpx\UtilBundle\Slug\SluggableManager
+    Demontpx\UtilBundle\Slug\SluggableManager:
+    Demontpx\UtilBundle\Slug\SluggedUrlGenerator:
 
-    demontpx_util.slug.slugged_url_generator:
-        class: Demontpx\UtilBundle\Slug\SluggedUrlGenerator
+    demontpx_util.slug.slugger: '@Demontpx\UtilBundle\Slug\SluggerInterface'
+    demontpx_util.slug.sluggable_manager: '@Demontpx\UtilBundle\Slug\SluggableManager'
+    demontpx_util.slug.slugged_url_generator: '@Demontpx\UtilBundle\Slug\SluggedUrlGenerator'
+
+    Demontpx\UtilBundle\Intl\SimpleDateFormatter:
+
+    Demontpx\UtilBundle\Twig\SlugExtension:
+        tags: [twig.extension]
+
+    Demontpx\UtilBundle\Text\TextTruncater:
         arguments:
-            - "@demontpx_util.slug.sluggable_manager"
-            - "@router"
-            - "@demontpx_util.slug.slugger"
+            - '%demontpx_util.charset%'
 
-    demontpx_util.intl.simple_date_formatter:
-        class: Demontpx\UtilBundle\Intl\SimpleDateFormatter
-        arguments:
-            - "%demontpx_util.intl.locale%"
+    demontpx_util.text.truncater: '@Demontpx\UtilBundle\Text\TextTruncater'
 
-    demontpx_util.twig.extension.slug:
-        class: Demontpx\UtilBundle\Twig\SlugExtension
-        arguments:
-            - "@demontpx_util.slug.slugger"
-            - "@demontpx_util.slug.slugged_url_generator"
-        tags:
-            - { name: twig.extension }
+    Demontpx\UtilBundle\Twig\TextExtension:
+        tags: [twig.extension]
 
-    demontpx_util.text.truncater:
-        class: Demontpx\UtilBundle\Text\TextTruncater
-        arguments:
-            - "%demontpx_util.charset%"
+    Demontpx\UtilBundle\Twig\SimpleDateFormatterExtension:
+        tags: [twig.extension]
 
-    demontpx_util.twig.extension.text:
-        class: Demontpx\UtilBundle\Twig\TextExtension
-        arguments:
-            - "@demontpx_util.text.truncater"
-        tags:
-            - { name: twig.extension }
-
-    demontpx_util.twig.extension.simple_date_formatter:
-        class: Demontpx\UtilBundle\Twig\SimpleDateFormatterExtension
-        arguments:
-            - "@demontpx_util.intl.simple_date_formatter"
-        tags:
-            - { name: twig.extension }
-
-    demontpx_util.twig.extension.date_short:
-        class: Demontpx\UtilBundle\Twig\DateShortExtension
-        arguments:
-            - "@demontpx_util.intl.simple_date_formatter"
-        tags:
-            - { name: twig.extension }
-
-    demontpx_util.form.type.delete:
-        class: Demontpx\UtilBundle\Form\DeleteType
-        tags:
-            - { name: form.type }
+    Demontpx\UtilBundle\Twig\DateShortExtension:
+        tags: [twig.extension]

@@ -12,7 +12,6 @@ class SimpleDateFormatterExtensionTest extends TestCase
 {
     /** @var SimpleDateFormatterExtension */
     private $extension;
-
     /** @var \PHPUnit_Framework_MockObject_MockObject|SimpleDateFormatter */
     private $formatter;
 

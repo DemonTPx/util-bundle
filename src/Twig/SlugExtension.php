@@ -4,15 +4,17 @@ namespace Demontpx\UtilBundle\Twig;
 
 use Demontpx\UtilBundle\Slug\SluggedUrlGenerator;
 use Demontpx\UtilBundle\Slug\SluggerInterface;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
+use Twig\TwigFunction;
 
 /**
  * @copyright 2015 Bert Hekman
  */
-class SlugExtension extends \Twig_Extension
+class SlugExtension extends AbstractExtension
 {
     /** @var SluggerInterface */
     private $slugger;
-
     /** @var SluggedUrlGenerator */
     private $urlGenerator;
 
@@ -25,15 +27,15 @@ class SlugExtension extends \Twig_Extension
     public function getFilters()
     {
         return [
-            new \Twig_Filter('slug', [$this->slugger, 'slug']),
+            new TwigFilter('slug', [$this->slugger, 'slug']),
         ];
     }
 
     public function getFunctions()
     {
         return [
-            new \Twig_Function('slug', [$this->slugger, 'slug']),
-            new \Twig_Function('path_sluggable', [$this->urlGenerator, 'generate']),
+            new TwigFunction('slug', [$this->slugger, 'slug']),
+            new TwigFunction('path_sluggable', [$this->urlGenerator, 'generate']),
         ];
     }
 }

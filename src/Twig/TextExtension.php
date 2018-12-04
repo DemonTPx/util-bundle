@@ -3,11 +3,14 @@
 namespace Demontpx\UtilBundle\Twig;
 
 use Demontpx\UtilBundle\Text\TextTruncater;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
+use Twig\TwigFunction;
 
 /**
  * @copyright 2015 Bert Hekman
  */
-class TextExtension extends \Twig_Extension
+class TextExtension extends AbstractExtension
 {
     /** @var TextTruncater */
     private $truncater;
@@ -20,14 +23,14 @@ class TextExtension extends \Twig_Extension
     public function getFilters()
     {
         return [
-            new \Twig_Filter('truncate', [$this->truncater, 'truncate']),
+            new TwigFilter('truncate', [$this->truncater, 'truncate']),
         ];
     }
 
     public function getFunctions()
     {
         return [
-            new \Twig_Function('truncate', [$this->truncater, 'truncate']),
+            new TwigFunction('truncate', [$this->truncater, 'truncate']),
         ];
     }
 }

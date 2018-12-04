@@ -20,10 +20,8 @@ abstract class WebTestCase extends BaseWebTestCase
 
     /** @var Client */
     protected $client;
-
     /** @var Response */
     protected $response;
-
     /** @var Crawler */
     protected $crawler;
 

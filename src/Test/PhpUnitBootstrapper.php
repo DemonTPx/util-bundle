@@ -14,19 +14,14 @@ class PhpUnitBootstrapper
 {
     /** @var self */
     private static $instance;
-
     /** @var KernelInterface */
     private $kernel;
-
     /** @var Application */
     private $application;
-
     /** @var Filesystem */
     private $filesystem;
-
     /** @var string[] */
     private $databaseFileList = ['test.db'];
-
     /** @var string */
     private $backupExtension = 'bk';
 

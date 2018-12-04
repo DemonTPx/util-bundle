@@ -1,6 +1,4 @@
 services:
-    demontpx_util.throwable_collector:
-        class: Demontpx\UtilBundle\Test\ThrowableCollector
-        tags:
-            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
+    Demontpx\UtilBundle\Test\ThrowableCollector:
+        tags: [{ name: kernel.event_listener, event: kernel.exception, method: onKernelException }]
         public: true
