@@ -27,7 +27,7 @@ class DateShortExtension extends AbstractExtension
         ];
     }
 
-    public function dateShort(\DateTime $date): string
+    public function dateShort(\DateTimeInterface $date): string
     {
         $now = new \DateTime();
 
@@ -48,7 +48,7 @@ class DateShortExtension extends AbstractExtension
         return $this->formatter->date($date, SimpleDateFormatter::SHORT);
     }
 
-    public function dateShortHover(\DateTime $date): string
+    public function dateShortHover(\DateTimeInterface $date): string
     {
         $fullDate = $this->formatter->date($date, SimpleDateFormatter::FULL) . ', ' .
             $this->formatter->time($date, SimpleDateFormatter::SHORT);
