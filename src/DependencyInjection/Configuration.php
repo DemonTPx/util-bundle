@@ -12,8 +12,8 @@ class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('demontpx_util');
+        $treeBuilder = new TreeBuilder('demontpx_util');
+        $rootNode = $treeBuilder->getRootNode();
 
         $rootNode->children()
             ->booleanNode('testing')->defaultFalse()->end()
