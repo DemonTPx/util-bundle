@@ -2,7 +2,7 @@
 
 namespace Demontpx\UtilBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 /**
  * @copyright 2014 Bert Hekman
  */
-abstract class BaseController extends Controller
+abstract class BaseController extends AbstractController
 {
     /**
      * Add the current HTTP referrer header to the form
