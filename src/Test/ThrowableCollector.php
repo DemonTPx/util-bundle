@@ -2,7 +2,7 @@
 
 namespace Demontpx\UtilBundle\Test;
 
-use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
+use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 
 /**
  * @copyright 2018 Bert Hekman
@@ -22,8 +22,8 @@ class ThrowableCollector
         return $this->throwable;
     }
 
-    public function onKernelException(GetResponseForExceptionEvent $event)
+    public function onKernelException(ExceptionEvent $event)
     {
-        $this->throwable = $event->getException();
+        $this->throwable = $event->getThrowable();
     }
 }

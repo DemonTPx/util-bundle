@@ -2,7 +2,7 @@
 
 namespace Demontpx\UtilBundle\Test;
 
-use Symfony\Bundle\FrameworkBundle\Client;
+use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 
 /**
  * @copyright 2018 Bert Hekman
@@ -13,7 +13,7 @@ trait UserClientTrait
         string $username,
         array $options = [],
         array $server = ['HTTPS' => true]
-    ): Client
+    ): KernelBrowser
     {
         return static::createClient(
             $options,

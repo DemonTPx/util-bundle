@@ -4,6 +4,7 @@ namespace Demontpx\UtilBundle\Twig;
 
 use Demontpx\UtilBundle\Intl\SimpleDateFormatter;
 use PHPUnit\Framework\TestCase;
+use Twig\TwigFilter;
 
 /**
  * @copyright 2014 Bert Hekman
@@ -61,7 +62,7 @@ class DateShortExtensionTest extends TestCase
 
     public function testGetFilters()
     {
-        /** @var \Twig_SimpleFilter[] $filterList */
+        /** @var TwigFilter[] $filterList */
         $filterList = $this->extension->getFilters();
 
         $this->assertEquals('date_short', $filterList[0]->getName());

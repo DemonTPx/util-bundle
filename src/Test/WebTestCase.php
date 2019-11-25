@@ -2,7 +2,7 @@
 
 namespace Demontpx\UtilBundle\Test;
 
-use Symfony\Bundle\FrameworkBundle\Client;
+use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase as BaseWebTestCase;
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Component\DomCrawler\Form;
@@ -18,7 +18,7 @@ abstract class WebTestCase extends BaseWebTestCase
     use RethrowControllerExceptionTrait;
     use ResetStateAfterTestTrait;
 
-    /** @var Client */
+    /** @var KernelBrowser */
     protected $client;
     /** @var Response */
     protected $response;
