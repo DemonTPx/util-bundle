@@ -7,7 +7,7 @@ namespace Demontpx\UtilBundle\Test;
  */
 trait ResetStateAfterTestTrait
 {
-    protected function tearDown()
+    protected function tearDown(): void
     {
         parent::tearDown();
         PhpUnitBootstrapper::getInstance()->restoreDatabase();
