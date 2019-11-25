@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Demontpx\UtilBundle\Intl;
 
@@ -58,7 +58,7 @@ class SimpleDateFormatter
         \DateTimeInterface $dateTime,
         int $dateType = self::NONE,
         int $timeType = self::NONE,
-        string $pattern = null
+        string $pattern = ''
     ): \IntlDateFormatter
     {
         return new \IntlDateFormatter(

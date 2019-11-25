@@ -1,7 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Demontpx\UtilBundle\Test;
 
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpKernel\KernelInterface;
 
@@ -13,7 +14,7 @@ class PhpUnitBootstrapperTest extends TestCase
     /** @var KernelInterface */
     private $kernel;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->kernel = $this->createMockKernel();
         $this->kernel->expects($this->any())->method('boot');
@@ -37,7 +38,7 @@ class PhpUnitBootstrapperTest extends TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|KernelInterface
+     * @return MockObject|KernelInterface
      */
     private function createMockKernel()
     {

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Demontpx\UtilBundle\Intl;
 
@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
  */
 class SimpleDateFormatterTest extends TestCase
 {
-    public function setUp()
+    protected function setUp(): void
     {
         if ( ! extension_loaded('intl')) {
             $this->markTestSkipped('intl extension needs to be enabled');

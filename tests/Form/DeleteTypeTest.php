@@ -1,7 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Demontpx\UtilBundle\Form;
 
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -23,7 +24,7 @@ class DeleteTypeTest extends TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|OptionsResolver
+     * @return MockObject|OptionsResolver
      */
     private function createMockOptionsResolver()
     {

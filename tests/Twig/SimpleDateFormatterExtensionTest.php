@@ -1,8 +1,9 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Demontpx\UtilBundle\Twig;
 
 use Demontpx\UtilBundle\Intl\SimpleDateFormatter;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -12,10 +13,10 @@ class SimpleDateFormatterExtensionTest extends TestCase
 {
     /** @var SimpleDateFormatterExtension */
     private $extension;
-    /** @var \PHPUnit_Framework_MockObject_MockObject|SimpleDateFormatter */
+    /** @var MockObject|SimpleDateFormatter */
     private $formatter;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->formatter = $this->createMockFormatter();
         $this->extension = new SimpleDateFormatterExtension($this->formatter);
@@ -24,7 +25,7 @@ class SimpleDateFormatterExtensionTest extends TestCase
     /**
      * @dataProvider getFormats
      */
-    public function testDate($type, string $typeId)
+    public function testDate($type, int $typeId)
     {
         $date = '22-12-2015 00:47:47';
         $formattedDate = 'Dec 22, 2015';
@@ -41,7 +42,7 @@ class SimpleDateFormatterExtensionTest extends TestCase
     /**
      * @dataProvider getFormats
      */
-    public function testTime($type, string $typeId)
+    public function testTime($type, int $typeId)
     {
         $date = '22-12-2015 00:47:47';
         $formattedTime = 'Dec 22, 2015';
@@ -75,7 +76,7 @@ class SimpleDateFormatterExtensionTest extends TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|SimpleDateFormatter
+     * @return MockObject|SimpleDateFormatter
      */
     public function createMockFormatter()
     {

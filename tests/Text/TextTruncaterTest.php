@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Demontpx\UtilBundle\Text;
 
@@ -12,7 +12,7 @@ class TextTruncaterTest extends TestCase
     /** @var TextTruncater */
     private $truncater;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->truncater = new TextTruncater('UTF-8');
     }

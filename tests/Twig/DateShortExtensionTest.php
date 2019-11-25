@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Demontpx\UtilBundle\Twig;
 
@@ -15,7 +15,7 @@ class DateShortExtensionTest extends TestCase
     /** @var DateShortExtension */
     private $extension;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->formatter = new SimpleDateFormatter('en');
         $this->extension = new DateShortExtension($this->formatter);
