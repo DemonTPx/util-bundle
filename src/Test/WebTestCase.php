@@ -18,7 +18,7 @@ abstract class WebTestCase extends BaseWebTestCase
     use RethrowControllerExceptionTrait;
     use ResetStateAfterTestTrait;
 
-    protected KernelBrowser $client;
+    protected ?KernelBrowser $client = null;
     protected Response $response;
     protected Crawler $crawler;
 
