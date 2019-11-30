@@ -12,8 +12,7 @@ use Twig\TwigFunction;
  */
 class TextExtension extends AbstractExtension
 {
-    /** @var TextTruncater */
-    private $truncater;
+    private TextTruncater $truncater;
 
     public function __construct(TextTruncater $truncater)
     {

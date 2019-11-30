@@ -9,8 +9,7 @@ use Symfony\Component\HttpKernel\Event\ExceptionEvent;
  */
 class ThrowableCollector
 {
-    /** @var \Throwable */
-    private $throwable = null;
+    private ?\Throwable $throwable = null;
 
     public function set(\Throwable $exception)
     {

@@ -11,8 +11,7 @@ use Twig\TwigFilter;
  */
 class DateShortExtension extends AbstractExtension
 {
-    /** @var SimpleDateFormatter */
-    private $formatter;
+    private SimpleDateFormatter $formatter;
 
     public function __construct(SimpleDateFormatter $formatter)
     {

@@ -9,12 +9,9 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
  */
 class SluggedUrlGenerator
 {
-    /** @var SluggableManager */
-    private $sluggableManager;
-    /** @var UrlGeneratorInterface */
-    private $urlGenerator;
-    /** @var SluggerInterface */
-    private $slugger;
+    private SluggableManager $sluggableManager;
+    private UrlGeneratorInterface $urlGenerator;
+    private SluggerInterface $slugger;
 
     public function __construct(
         SluggableManager $sluggableManager,

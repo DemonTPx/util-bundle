@@ -7,8 +7,7 @@ namespace Demontpx\UtilBundle\Text;
  */
 class TextTruncater
 {
-    /** @var string */
-    private $charset;
+    private string $charset;
 
     public function __construct(string $charset)
     {

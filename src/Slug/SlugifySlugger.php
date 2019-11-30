@@ -3,16 +3,16 @@
 namespace Demontpx\UtilBundle\Slug;
 
 use Cocur\Slugify\Slugify;
+use Cocur\Slugify\SlugifyInterface;
 
 /**
  * @copyright 2015 Bert Hekman
  */
 class SlugifySlugger extends AbstractSlugger
 {
-    /** @var Slugify */
-    private $slugify;
+    private SlugifyInterface $slugify;
 
-    public function __construct(?Slugify $slugify = null)
+    public function __construct(?SlugifyInterface $slugify = null)
     {
         $this->slugify = $slugify ?: new Slugify();
     }

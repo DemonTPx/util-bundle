@@ -11,8 +11,7 @@ use PHPUnit\Framework\TestCase;
  */
 class SimpleDateFormatterExtensionTest extends TestCase
 {
-    /** @var SimpleDateFormatterExtension */
-    private $extension;
+    private SimpleDateFormatterExtension $extension;
     /** @var MockObject|SimpleDateFormatter */
     private $formatter;
 

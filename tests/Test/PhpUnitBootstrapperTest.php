@@ -11,7 +11,7 @@ use Symfony\Component\HttpKernel\KernelInterface;
  */
 class PhpUnitBootstrapperTest extends TestCase
 {
-    /** @var KernelInterface */
+    /** @var MockObject|KernelInterface */
     private $kernel;
 
     protected function setUp(): void

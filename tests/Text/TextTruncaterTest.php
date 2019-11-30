@@ -9,8 +9,7 @@ use PHPUnit\Framework\TestCase;
  */
 class TextTruncaterTest extends TestCase
 {
-    /** @var TextTruncater */
-    private $truncater;
+    private TextTruncater $truncater;
 
     protected function setUp(): void
     {

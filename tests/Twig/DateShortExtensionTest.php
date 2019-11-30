@@ -11,10 +11,8 @@ use Twig\TwigFilter;
  */
 class DateShortExtensionTest extends TestCase
 {
-    /** @var SimpleDateFormatter */
-    private $formatter;
-    /** @var DateShortExtension */
-    private $extension;
+    private SimpleDateFormatter $formatter;
+    private DateShortExtension $extension;
 
     protected function setUp(): void
     {

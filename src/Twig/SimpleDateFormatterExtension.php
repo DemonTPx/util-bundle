@@ -11,11 +11,8 @@ use Twig\TwigFilter;
  */
 class SimpleDateFormatterExtension extends AbstractExtension
 {
-    /** @var SimpleDateFormatter */
-    private $formatter;
-
-    /** @var int[] */
-    private static $typeMap = [
+    private SimpleDateFormatter $formatter;
+    private static array $typeMap = [
         'full' => SimpleDateFormatter::FULL,
         'long' => SimpleDateFormatter::LONG,
         'medium' => SimpleDateFormatter::MEDIUM,

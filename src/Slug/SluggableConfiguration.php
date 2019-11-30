@@ -7,14 +7,10 @@ namespace Demontpx\UtilBundle\Slug;
  */
 class SluggableConfiguration
 {
-    /** @var string */
-    private $className;
-    /** @var string */
-    private $routeName;
-    /** @var string */
-    private $routeIdParameterName;
-    /** @var string */
-    private $routeSlugParameterName;
+    private string $className;
+    private string $routeName;
+    private string $routeIdParameterName;
+    private string $routeSlugParameterName;
 
     public function __construct(
         string $className,

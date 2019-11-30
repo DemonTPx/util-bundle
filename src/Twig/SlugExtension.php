@@ -13,10 +13,8 @@ use Twig\TwigFunction;
  */
 class SlugExtension extends AbstractExtension
 {
-    /** @var SluggerInterface */
-    private $slugger;
-    /** @var SluggedUrlGenerator */
-    private $urlGenerator;
+    private SluggerInterface $slugger;
+    private SluggedUrlGenerator $urlGenerator;
 
     public function __construct(SluggerInterface $slugger, SluggedUrlGenerator $urlGenerator)
     {

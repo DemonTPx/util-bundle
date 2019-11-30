@@ -7,8 +7,8 @@ namespace Demontpx\UtilBundle\Slug;
  */
 class SluggableManager
 {
-    /** @var SluggableConfiguration */
-    private $configurationList = [];
+    /** @var SluggableConfiguration[] */
+    private array $configurationList = [];
 
     public function register(SluggableConfiguration $configuration)
     {

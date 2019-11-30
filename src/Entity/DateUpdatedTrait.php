@@ -9,16 +9,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 trait DateUpdatedTrait
 {
-    /**
-     * @var ?\DateTimeInterface
-     *
-     * @ORM\Column(type="datetime", nullable=true)
-     */
-    private $dateUpdated;
+    /** @ORM\Column(type="datetime", nullable=true) */
+    private ?\DateTimeInterface $dateUpdated = null;
 
-    /**
-     * @ORM\PreUpdate
-     */
+    /** @ORM\PreUpdate */
     public function setDateUpdatedNow()
     {
         $this->dateUpdated = new \DateTime();

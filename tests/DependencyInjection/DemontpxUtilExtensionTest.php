@@ -2,7 +2,6 @@
 
 namespace Demontpx\UtilBundle\DependencyInjection;
 
-use Demontpx\UtilBundle\Form\DeleteType;
 use Demontpx\UtilBundle\Twig\DateShortExtension;
 use Demontpx\UtilBundle\Twig\SimpleDateFormatterExtension;
 use PHPUnit\Framework\TestCase;

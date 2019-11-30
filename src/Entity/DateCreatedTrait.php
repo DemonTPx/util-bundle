@@ -9,16 +9,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 trait DateCreatedTrait
 {
-    /**
-     * @var \DateTimeInterface
-     *
-     * @ORM\Column(type="datetime")
-     */
-    private $dateCreated;
+    /** @ORM\Column(type="datetime") */
+    private ?\DateTimeInterface $dateCreated = null;
 
-    /**
-     * @ORM\PrePersist
-     */
+    /** @ORM\PrePersist */
     public function setDateCreatedNow()
     {
         $this->dateCreated = new \DateTime();

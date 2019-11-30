@@ -12,18 +12,13 @@ use Symfony\Component\HttpKernel\KernelInterface;
  */
 class PhpUnitBootstrapper
 {
-    /** @var self */
-    private static $instance;
-    /** @var KernelInterface */
-    private $kernel;
-    /** @var Application */
-    private $application;
-    /** @var Filesystem */
-    private $filesystem;
+    private static ?PhpUnitBootstrapper $instance = null;
+    private KernelInterface $kernel;
+    private Application $application;
+    private Filesystem $filesystem;
     /** @var string[] */
-    private $databaseFileList = ['test.db'];
-    /** @var string */
-    private $backupExtension = 'bk';
+    private array $databaseFileList = ['test.db'];
+    private string $backupExtension = 'bk';
 
     public static function getInstance(): PhpUnitBootstrapper
     {

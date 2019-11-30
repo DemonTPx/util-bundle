@@ -13,8 +13,7 @@ class SimpleDateFormatter
     const MEDIUM = \IntlDateFormatter::MEDIUM;
     const SHORT = \IntlDateFormatter::SHORT;
 
-    /** @var string */
-    private $locale;
+    private ?string $locale;
 
     public function __construct(?string $locale = null)
     {
