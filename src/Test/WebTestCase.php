@@ -2,6 +2,7 @@
 
 namespace Demontpx\UtilBundle\Test;
 
+use PHPUnit\Util\Test;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase as BaseWebTestCase;
 use Symfony\Component\DomCrawler\Crawler;
@@ -92,7 +93,7 @@ abstract class WebTestCase extends BaseWebTestCase
 
     private function getUsernameFromAnnotation(string $type): ?string
     {
-        $list = $this->getAnnotations();
+        $list = Test::parseTestMethodAnnotations(\get_class($this), $this->getName(false));
 
         if ( ! isset($list) || ! isset($list[$type]) || ! isset($list[$type]['user'])) {
             return null;
